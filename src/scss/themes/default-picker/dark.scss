@@ -1,0 +1,11 @@
+$colorpicker-default-input-bg: transparent !default;
+$colorpicker-default-input-border-color: rgba(#fff, .3) !default;
+$colorpicker-default-input-focus-border-color: rgba(#fff, .7) !default;
+$colorpicker-default-text-color: rgba(#fff, .5) !default;
+$colorpicker-default-input-text-color: rgba(#fff, .5) !default;
+
+@import "../../_variables/dark";
+@import "../../_variables/common";
+@import "../../_variables/default";
+@import "../../_partials/colorpicker";
+@import "default";

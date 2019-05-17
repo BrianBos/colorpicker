@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/tab-palette-picker/light-circle.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .colorpicker-ex-block {
+            height: 36px;
+            border-radius: 3px;
+        }
+
+        .colorpicker-ex-block--text-example {
+            border: 2px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="form-group form-group-colorpicker">
+                <label for="dc-ex1">Input</label>
+                <input id="dc-ex1" type="text" class="form-control">
+                <small class="form-text text-muted">format: <code>hex</code></small>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group form-group-colorpicker">
+                <label>Custom Anchor</label>
+                <div>
+                    <div id="dc-ex2" class="colorpicker-custom-anchor colorpicker-circle-anchor">
+                        <div class="colorpicker-circle-anchor__color" data-color></div>
+                    </div>
+                </div>
+                <small class="form-text text-muted">format: <code>hex</code></small>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <label for="dc-ex3">Anchor Inside Input (Right)</label>
+                <span class="colorpicker-input colorpicker-input--position-right">
+                <input id="dc-ex3" type="text" class="form-control">
+                <span id="dc-ex3-anchor" class="colorpicker-custom-anchor colorpicker-circle-anchor">
+                  <span class="colorpicker-circle-anchor__color" data-color></span>
+                </span>
+              </span>
+                <small class="form-text text-muted">format: <code>hex</code></small>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <label for="dc-ex4">Anchor Inside Input (Left)</label>
+                <span class="colorpicker-input colorpicker-input--position-left">
+                <input id="dc-ex4" type="text" class="form-control">
+                <span id="dc-ex4-anchor" class="colorpicker-custom-anchor colorpicker-circle-anchor">
+                  <span class="colorpicker-circle-anchor__color" data-color></span>
+                </span>
+              </span>
+                <small class="form-text text-muted">format: <code>hex</code></small>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="mt-4">Tab Palette Color Picker, Inline Mode</h3>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="form-group form-group-colorpicker">
+                <label for="dc-ex5">Input</label>
+                <input id="dc-ex5" type="text" class="form-control">
+                <small class="form-text text-muted">format: <code>hex</code></small>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group form-group-colorpicker">
+                <label for="dc-ex6">Custom Anchor</label>
+                <div>
+                    <div id="dc-ex6" class="colorpicker-custom-anchor colorpicker-circle-anchor">
+                        <div class="colorpicker-circle-anchor__color" data-color></div>
+                    </div>
+                </div>
+                <small class="form-text text-muted">format: <code>hex</code></small>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <label for="dc-ex7">Anchor Inside Input (Right)</label>
+                <span class="colorpicker-input colorpicker-input--position-right">
+                <input id="dc-ex7" type="text" class="form-control">
+                <span id="dc-ex7-anchor" class="colorpicker-custom-anchor colorpicker-circle-anchor">
+                  <span class="colorpicker-circle-anchor__color" data-color></span>
+                </span>
+              </span>
+                <small class="form-text text-muted">format: <code>hex</code></small>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <label for="dc-ex8">Anchor Inside Input (Left)</label>
+                <span class="colorpicker-input colorpicker-input--position-left">
+                <input id="dc-ex8" type="text" class="form-control">
+                <span id="dc-ex8-anchor" class="colorpicker-custom-anchor colorpicker-circle-anchor">
+                  <span class="colorpicker-circle-anchor__color" data-color></span>
+                </span>
+              </span>
+                <small class="form-text text-muted">format: <code>hex</code></small>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="mt-4">Tab Palette Color, Extra Options</h3>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="form-group form-group-colorpicker">
+                <div>
+                    <label for="dc-ex9">Hidden Input (Anchor), only for inline mode</label>
+                </div>
+                <input id="dc-ex9" type="text" class="form-control">
+                <small class="form-text text-muted">format: <code>hex</code></small>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group form-group-colorpicker">
+                <label for="dc-ex10">Hidden Arrow</label>
+                <input id="dc-ex10" type="text" class="form-control">
+                <small class="form-text text-muted">format: <code>hex</code></small>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <label>Dynamic Anchor Css Property</label>
+                <div id="dc-ex11" class="colorpicker-ex-block--text-example mb-2">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </div>
+            </div>
+            <div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline1" name="dc-ex11-anchor-css-property" class="custom-control-input" value="color" checked>
+                    <label class="custom-control-label" for="customRadioInline1">Color</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline2" name="dc-ex11-anchor-css-property" class="custom-control-input" value="background-color">
+                    <label class="custom-control-label" for="customRadioInline2">Background</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline3" name="dc-ex11-anchor-css-property" class="custom-control-input" value="border-color">
+                    <label class="custom-control-label" for="customRadioInline3">Border Color</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="js/tab-palette-picker.min.js"></script>
+    <script>
+        (function ($) {
+            'use strict';
+
+            $(document).ready(function() {
+                var colorPickerTabPalette = new ColorPicker.TabPalette('#dc-ex1', {
+
+                });
+
+                var colorPickerTabPaletteCustomAnchor = new ColorPicker.TabPalette('#dc-ex2', {
+                    color: 'green'
+                });
+
+                var colorpickerInsideInputAnchor = $('#dc-ex3-anchor').find('[data-color]');
+                var colorPickerTabPaletteInsideInput = new ColorPicker.TabPalette('#dc-ex3', {
+                    color: 'blue'
+                });
+                colorpickerInsideInputAnchor.css('background', colorPickerTabPaletteInsideInput.getColor());
+                colorPickerTabPaletteInsideInput.on('change', function(color) {
+                    colorpickerInsideInputAnchor.css('background', color);
+                });
+                colorpickerInsideInputAnchor.on('click', function () {
+                    $('#dc-ex3').trigger('focus');
+
+                    return false;
+                });
+
+                var colorpickerInsideInputAnchorLeft = $('#dc-ex4-anchor').find('[data-color]');
+                var colorPickerTabPaletteInsideInputLeft = new ColorPicker.TabPalette('#dc-ex4', {
+                    color: 'purple'
+                });
+                colorpickerInsideInputAnchorLeft.css('background', colorPickerTabPaletteInsideInputLeft.getColor());
+                colorPickerTabPaletteInsideInputLeft.on('change', function(color) {
+                    colorpickerInsideInputAnchorLeft.css('background', color);
+                });
+
+                var colorPickerTabPaletteInline = new ColorPicker.TabPalette('#dc-ex5', {
+                    inline: true
+                });
+
+                var colorPickerTabPaletteCustomAnchorInline = new ColorPicker.TabPalette('#dc-ex6', {
+                    color: 'yellow',
+                    inline: true
+                });
+
+
+                var colorpickerInsideInputAnchorInline = $('#dc-ex7-anchor').find('[data-color]');
+                var colorPickerTabPaletteInsideInputInline = new ColorPicker.TabPalette('#dc-ex7', {
+                    color: 'pink',
+                    inline: true
+                });
+                colorpickerInsideInputAnchorInline.css('background', colorPickerTabPaletteInsideInputInline.getColor());
+                colorPickerTabPaletteInsideInputInline.on('change', function(color) {
+                    colorpickerInsideInputAnchorInline.css('background', color);
+                });
+                colorpickerInsideInputAnchorInline.on('click', function () {
+                    $('#dc-ex7').trigger('focus');
+
+                    return false;
+                });
+
+                var colorpickerInsideInputAnchorLeftInline = $('#dc-ex8-anchor').find('[data-color]');
+                var colorPickerTabPaletteInsideInputLeftInline = new ColorPicker.TabPalette('#dc-ex8', {
+                    color: 'red',
+                    inline: true
+                });
+                colorpickerInsideInputAnchorLeftInline.css('background', colorPickerTabPaletteInsideInputLeftInline.getColor());
+                colorPickerTabPaletteInsideInputLeftInline.on('change', function(color) {
+                    colorpickerInsideInputAnchorLeftInline.css('background', color);
+                });
+
+                var colorPickerTabPaletteHiddenAnchor = new ColorPicker.TabPalette('#dc-ex9', {
+                    inline: true,
+                    anchor: {
+                        hidden: true
+                    }
+                });
+
+                var colorPickerTabPaletteHiddenArrow = new ColorPicker.TabPalette('#dc-ex10', {
+                    arrow: false
+                });
+
+                var dynamicAnchorCssProperty = new ColorPicker.TabPalette('#dc-ex11', {
+                    inline: true,
+                    color: 'black',
+                    anchor: {
+                        cssProperty: 'color'
+                    }
+                });
+
+                $('[name=dc-ex11-anchor-css-property]').on('change', function() {
+                    dynamicAnchorCssProperty.setAnchorCssProperty($(this).val());
+                });
+
+                $('.colorpicker-theme').on('change', function () {
+                    var val = $(this).val();
+                    var style = '<link id="colorpicker-style" rel="stylesheet" href="' + val + '">';
+                    $('head').append(style);
+                });
+            });
+        })(jQuery);
+    </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+@import "animations";
+
+.colorpicker {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: inherit;
+  position: fixed;
+  display: none;
+  border: $colorpicker-border;
+  box-shadow: $colorpicker-box-shadow;
+  background: $colorpicker-bg;
+  border-radius: $colorpicker-border-radius;
+
+  &.is-opened {
+    display: inline-block;
+    z-index: 9;
+  }
+
+  &:after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    box-sizing: border-box;
+    border: $colorpicker-arrow-width solid black;
+    box-shadow: $colorpicker-arrow-box-shadow;
+    transform-origin: 50% 50%;
+  }
+
+  &-input + &--inline,
+  &-anchor + &--inline {
+    margin-top: $colorpicker-margin-top;
+  }
+
+  &-circle-anchor {
+    box-sizing: border-box;
+    display: inline-block;
+    line-height: 0;
+
+    &__color {
+      line-height: 0;
+      display: inline-block;
+      border-radius: 50%;
+      position: relative;
+      z-index: 1;
+      width: $colorpicker-circle-anchor-width;
+      height: $colorpicker-circle-anchor-height;
+      border: $colorpicker-circle-anchor-border;
+      cursor: pointer;
+    }
+  }
+
+  &-anchor--inline {
+    display: block;
+  }
+
+  &--position-top,
+  &--position-top-center {
+    &::after,
+    &::before {
+      margin-left: -($colorpicker-arrow-width / 2);
+      bottom: -$colorpicker-arrow-width;
+      left: 50%;
+      border-color: transparent transparent $colorpicker-arrow-color $colorpicker-arrow-color;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &--position-bottom,
+  &--position-bottom-center {
+    &::after {
+      margin-left: -($colorpicker-arrow-width / 2);
+      top: -$colorpicker-arrow-width;
+      bottom: auto;
+      left: 50%;
+      border-color: transparent transparent $colorpicker-arrow-color $colorpicker-arrow-color;
+      transform: rotate(135deg);
+    }
+  }
+
+  &--position-top,
+  &--position-bottom {
+    &.is-arrow-left {
+      &::after {
+        left: 18px;
+        right: auto;
+      }
+    }
+
+    &.is-arrow-right {
+      &::after {
+        left: auto;
+        right: 18px;
+      }
+    }
+  }
+
+  &--position-left,
+  &--position-left-center {
+    &::after {
+      margin-top: -($colorpicker-arrow-width / 2);
+      left: auto;
+      bottom: auto;
+      right: -$colorpicker-arrow-width;
+      top: 50%;
+      border-color: transparent transparent $colorpicker-arrow-color $colorpicker-arrow-color;
+      transform: rotate(225deg);
+    }
+  }
+
+  &--position-right,
+  &--position-right-center {
+    &::after {
+      margin-top: -($colorpicker-arrow-width / 2);
+      left: -$colorpicker-arrow-width;
+      bottom: auto;
+      right: auto;
+      top: 50%;
+      border-color: transparent transparent $colorpicker-arrow-color $colorpicker-arrow-color;
+      transform: rotate(-315deg);
+    }
+  }
+
+  &--position-left,
+  &--position-right {
+    &.is-arrow-top {
+      &::after {
+        top: 18px;
+        bottom: auto;
+      }
+    }
+
+    &.is-arrow-bottom {
+      &::after {
+        top: auto;
+        bottom: 18px;
+      }
+    }
+  }
+
+  &--inline {
+    position: static;
+    box-shadow: none;
+    display: inline-block;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &--no-arrow {
+    &:after {
+      opacity: 0;
+    }
+  }
+
+  &-input {
+    position: relative;
+    display: block;
+
+    &--position-right {
+      .colorpicker-custom-anchor {
+        right: $colorpicker-input-right;
+      }
+
+      input,
+      .form-control {
+        padding-right: $colorpicker-input-padding-right;
+      }
+    }
+
+    &--position-left {
+      .colorpicker-custom-anchor {
+        left: $colorpicker-input-left;
+      }
+
+      input,
+      .form-control {
+        padding-left: $colorpicker-input-padding-left;
+      }
+    }
+  }
+
+  &-input &-custom-anchor {
+    position: absolute;
+    top: 50%;
+    margin-top: -($colorpicker-input-anchor-width / 2);
+    display: block;
+  }
+
+  &-input &-circle-anchor__color {
+    width: $colorpicker-input-anchor-width;
+    height: $colorpicker-input-anchor-height;
+  }
+}
+
+input,
+select,
+textarea {
+  + .colorpicker--inline {
+    margin-top: $colorpicker-margin-top;
+  }
+}

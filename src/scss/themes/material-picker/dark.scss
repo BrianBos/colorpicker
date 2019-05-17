@@ -1,0 +1,11 @@
+$colorpicker-bg: #272727 !default;
+$colorpicker-border: none !default;
+$colorpicker-arrow-color: #272727 !default;
+$colorpicker-material-shade-bg: rgba(#fff, .2) !default;
+$colorpicker-material-desc-color: #fff !default;
+$colorpicker-material-shade-cursor-top: 7px !default; // 7px because shade cursor doesn't have shadow
+
+@import "../../_variables/common";
+@import "../../_variables/material";
+@import "../../_partials/colorpicker";
+@import "default";

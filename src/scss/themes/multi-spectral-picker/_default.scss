@@ -1,0 +1,135 @@
+.colorpicker-multi-spectral {
+  height: auto;
+  width: $colorpicker-multispectral-spectrum-width;
+  padding: $colorpicker-multispectral-paddings;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__spectrum-container {
+    width: $colorpicker-multispectral-spectrum-width;
+    height: $colorpicker-multispectral-spectrum-height;
+    position: relative;
+    box-sizing: border-box;
+    z-index: 1;
+  }
+
+  &__spectrum-canvas {
+    width: $colorpicker-multispectral-spectrum-canvas-width;
+    height: $colorpicker-multispectral-spectrum-height;
+    border-top-left-radius: $colorpicker-border-radius;
+    border-top-right-radius: $colorpicker-border-radius;
+    padding: 0;
+    margin: $colorpicker-multispectral-spectrum-canvas-margin;
+    box-sizing: border-box;
+  }
+
+  &__spectrum-cursor {
+    border: 2px solid #fff;
+    width: $colorpicker-multispectral-spectrum-cursor-width;
+    height: $colorpicker-multispectral-spectrum-cursor-height;
+    background: transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: $colorpicker-multispectral-spectrum-cursor-box-shadow;
+    cursor: default;
+    box-sizing: border-box;
+
+    /*transition-property: top, left; use only if clicked
+    transition-duration: .2s, .2s;*/
+  }
+
+  &__opacity-container {
+    margin: $colorpicker-multispectral-opacity-margin;
+    width: $colorpicker-multispectral-opacity-width;
+    height: $colorpicker-multispectral-opacity-height;
+    border-radius: $colorpicker-border-radius;
+    padding: 0;
+    line-height: 0;
+    position: relative;
+    background: #fff url($colorpicker-transparent-bg-url);
+  }
+
+  &__opacity-canvas {
+    width: $colorpicker-multispectral-opacity-width;
+    height: $colorpicker-multispectral-opacity-height;
+    border-radius: $colorpicker-border-radius;
+    line-height: 0;
+  }
+
+  &__opacity-cursor {
+    cursor: default;
+    width: $colorpicker-multispectral-opacity-cursor-width;
+    height: $colorpicker-multispectral-opacity-cursor-height;
+    border-radius: 50%;
+    background: $colorpicker-multispectral-opacity-cursor-bg;
+    position: absolute;
+    left: -4px;
+    top: calc(50% - 8px);
+    box-shadow: $colorpicker-multispectral-opacity-cursor-box-shadow;
+  }
+
+  &--hex-only &__opacity-container {
+    display: none;
+  }
+
+  &--hex-only.colorpicker-multi-spectral--history-hidden &__spectrum-canvas {
+    border-radius: $colorpicker-border-radius;
+  }
+
+  &__history {
+    border-top: 1px solid $colorpicker-border-color;
+    padding: 15px 5px 5px 14px;
+    display: flex;
+    flex-wrap: wrap;
+
+    &.is-hidden {
+      display: none;
+    }
+
+    &-item {
+      cursor: pointer;
+      width: 16px;
+      height: 16px;
+      border: 1px solid rgba(#000, .05);
+      border-radius: 16px;
+      background: #EEF1F5;
+      margin-right: 8px;
+      margin-bottom: 8px;
+
+      &.is-empty {
+        border-color: #EEF1F5;
+      }
+
+      &.is-add-new {
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        background: #dfe5ec url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAA7SURBVHjaYvz//z9Dy6RlDFDwH0oz1uRFQRjNE5cyIAG4ApgAEwMBwIKkC5tJxJnAiM8NjIR8QdAKwABr3RPEnLgHwwAAAABJRU5ErkJggg==') center center no-repeat;
+        width: 16px;
+        height: 16px;
+        border: none;
+
+        &:hover {
+          background-color: darken(#dfe5ec, 3%);
+        }
+      }
+    }
+  }
+}
+
+.colorpicker-multi-spectral.colorpicker--position-right {
+  &::after {
+    left: -7px;
+  }
+}
+
+.colorpicker-multi-spectral.colorpicker--position-left {
+  &::after {
+    right: -7px;
+  }
+}

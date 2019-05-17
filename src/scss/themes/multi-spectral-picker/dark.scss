@@ -1,0 +1,9 @@
+$colorpicker-bg: #272727 !default;
+$colorpicker-arrow-color: #272727 !default;
+$colorpicker-multispectral-spectrum-canvas-margin: 1px 1px 0 1px !default;
+$colorpicker-multispectral-spectrum-canvas-width: 262px !default;
+
+@import "../../_variables/common";
+@import "../../_variables/multi-spectral";
+@import "../../_partials/colorpicker";
+@import "default";

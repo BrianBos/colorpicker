@@ -1,0 +1,207 @@
+.colorpicker-default {
+  height: auto;
+  width: $colorpicker-default-width;
+  padding: $colorpicker-default-paddings;
+
+  &__body {
+    display: flex;
+  }
+
+  &__spectrum-container {
+    width: $colorpicker-default-spectrum-canvas-width;
+    height: $colorpicker-default-spectrum-canvas-height;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: $colorpicker-border-radius;
+  }
+
+  &__spectrum-canvas {
+    width: $colorpicker-default-spectrum-canvas-width;
+    height: $colorpicker-default-spectrum-canvas-height;
+    border-radius: $colorpicker-border-radius;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  &__spectrum-cursor,
+  &__hue-cursor,
+  &__opacity-cursor {
+    border: $colorpicker-default-cursor-border;
+    width: $colorpicker-default-cursor-width;
+    height: $colorpicker-default-cursor-height;
+    background: transparent;
+    border-radius: $colorpicker-default-cursor-radius;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: $colorpicker-default-cursor-box-shadow;
+    cursor: default;
+    box-sizing: border-box;
+  }
+
+  &__hue-cursor,
+  &__opacity-cursor {
+    left: calc(50% - 7px);
+    top: 50%;
+  }
+
+  &__hue-container,
+  &__opacity-container {
+    width: $colorpicker-default-hue-and-opacity-canvas-width;
+    height: $colorpicker-default-hue-and-opacity-canvas-height;
+    border-radius: $colorpicker-border-radius;
+    margin-left: $colorpicker-default-hue-and-opacity-canvas-margin-left;
+    position: relative;
+    box-shadow: 0 0 2px rgba(#000, .1);
+  }
+
+  &__opacity-container {
+    background: #fff url($colorpicker-transparent-bg-url);
+  }
+
+  &__hue-canvas,
+  &__opacity-canvas {
+    width: $colorpicker-default-hue-and-opacity-canvas-width;
+    height: $colorpicker-default-hue-and-opacity-canvas-height;
+    border-radius: $colorpicker-border-radius;
+  }
+
+  &--hex-only &__opacity-container {
+    display: none;
+  }
+
+  &--hex-only {
+    width: $colorpicker-default-width - $colorpicker-default-hue-and-opacity-canvas-width - $colorpicker-default-hue-and-opacity-canvas-margin-left;
+  }
+
+  &--hex-only &__spectrum-container,
+  &--hex-only &__spectrum-canvas {
+    width: $colorpicker-default-spectrum-canvas-width;
+  }
+
+  &--hex-only &__r-input-container,
+  &--hex-only &__g-input-container,
+  &--hex-only &__b-input-container,
+  &--hex-only &__a-input-container,
+  &--hex-only &__hex-text {
+    display: none;
+  }
+
+  &--hex-only &__hex-input-container,
+  &--hex-only &__hex-input {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  &--hex-only &__history {
+    padding-right: 1px;
+  }
+
+  &__info {
+    display: flex;
+    padding: $colorpicker-default-info-padding;
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__hex-input-container,
+  &__r-input-container,
+  &__g-input-container,
+  &__b-input-container,
+  &__a-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: $colorpicker-default-input-field-margin-right;
+  }
+
+  &__hex-input,
+  &__r-input,
+  &__g-input,
+  &__b-input,
+  &__a-input {
+    box-sizing: border-box;
+    width: $colorpicker-default-input-width;
+    height: $colorpicker-default-input-height;
+    border: $colorpicker-default-input-border;
+    border-radius: $colorpicker-border-radius;
+    color: $colorpicker-default-input-text-color;
+    padding: $colorpicker-default-input-padding;
+    font-size: $colorpicker-default-input-font-size;
+    transition: $colorpicker-default-input-transition;
+    background: $colorpicker-default-input-bg;
+
+    &::placeholder {
+      color: $colorpicker-default-input-placeholder-color;
+    }
+
+    &:focus {
+      border-color: $colorpicker-default-input-focus-border-color;
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  &__hex-input {
+    width: $colorpicker-default-hex-input-width;
+  }
+
+  &__hex-text,
+  &__r-text,
+  &__g-text,
+  &__b-text,
+  &__a-text {
+    text-transform: $colorpicker-default-text-transform;
+    font-size: $colorpicker-default-text-font-size;
+    color: $colorpicker-default-text-color;
+    margin-top: $colorpicker-default-text-margin-top;
+  }
+
+  &__history {
+    border-top: 1px solid $colorpicker-border-color;
+    padding: 15px;
+    margin: -$colorpicker-default-padding;
+    margin-top: $colorpicker-default-padding;
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 5px;
+    padding-bottom: 5px;
+
+    &.is-hidden {
+      display: none;
+    }
+
+    &-item {
+      cursor: pointer;
+      width: 16px;
+      height: 16px;
+      border: 1px solid rgba(#000, .05);
+      border-radius: 16px;
+      background: #EEF1F5;
+      margin-right: 10px;
+      margin-bottom: 10px;
+
+      &.is-empty {
+        border-color: transparent;
+      }
+
+      &.is-add-new {
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        background: #dfe5ec url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAA7SURBVHjaYvz//z9Dy6RlDFDwH0oz1uRFQRjNE5cyIAG4ApgAEwMBwIKkC5tJxJnAiM8NjIR8QdAKwABr3RPEnLgHwwAAAABJRU5ErkJggg==') center center no-repeat;
+        width: 16px;
+        height: 16px;
+        border: none;
+
+        &:hover {
+          background-color: darken(#dfe5ec, 3%);
+        }
+      }
+    }
+  }
+}
+
